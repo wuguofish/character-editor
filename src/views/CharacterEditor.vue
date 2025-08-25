@@ -41,7 +41,9 @@
           <h4>⚠️ 注意事項 ⚠️</h4>
           <p>本工具<b>不涉及任何資料儲存</b>，僅做格式轉換。<br />
             對Google雲端操作功能有疑慮者，請選擇使用本機檔案匯出匯入功能。 <br />
-            匯出為Markdown格式的檔案，無法匯回本工具。</p>
+            匯出為Markdown格式的檔案，無法匯回本工具。<br />
+            永久免費，付費也不會解鎖新功能。
+          </p>
         </div>
         <FileControls />
         <el-button type="info" @click="scrollToDetailedSettings">

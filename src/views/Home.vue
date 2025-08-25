@@ -39,6 +39,7 @@
           <li>本工具為純粹的網頁，不涉及伺服器資料交換，即使讀取本機檔案也只會暫存在使用者瀏覽器上，請勿找開發者討要資料。</li>
           <li>支援匯出Markdown，給想把角色搬去GPT或其他平台的人，可以有一個草稿使用。（但Markdown格式無法匯回！）</li>
           <li>想知道怎麼寫的，可以去github頁面看，原始碼全部在那邊，可以自己fork一個回去改。</li>
+          <li>永久免費、Donate隨喜，付費不會解鎖新功能。</li>
         </ol>
       </div>
       <el-button type="primary" size="large" @click="$router.push('/editor')" class="start-button">
