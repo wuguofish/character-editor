@@ -194,16 +194,21 @@ export default {
 }
 
 @media (max-width: 768px) {
+
+  .hint-text {
+    margin-left: 0px;
+  }
+
   .story-item {
-    padding: 15px;
+    padding: 5px;
   }
 
   .options-section {
-    padding: 15px;
+    padding: 5px;
   }
 
   .option-item {
-    padding: 10px;
+    padding: 5px;
   }
 }
 </style>

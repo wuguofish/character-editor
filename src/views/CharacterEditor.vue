@@ -358,6 +358,12 @@ h1 {
 
 /* 手機螢幕適配 */
 @media (max-width: 768px) {
+
+  .character-editor {
+      padding: 5px;
+  }
+  
+
   .header {
     position: relative;
     text-align: center;
