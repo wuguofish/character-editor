@@ -1,5 +1,8 @@
 <template>
   <div class="character-editor">
+    <!-- 導覽側邊欄 -->
+    <NavigationSidebar @navigate="handleNavigate" />
+
     <div class="container">
       <div class="header">
         <h1><img :src="require('@/../public/logo.svg')" alt="Logo" class="logo" /> 7755遊戲角色檔案編輯器</h1>
@@ -46,12 +49,6 @@
           </p>
         </div>
         <FileControls />
-        <el-button type="info" @click="scrollToDetailedSettings">
-          📋 快轉到附加資訊區
-        </el-button>
-        <el-button type="warning" @click="scrollToEvents">
-          🎬 快轉到事件區
-        </el-button>
       </div>
 
       <!-- 狀態訊息 -->
@@ -59,11 +56,24 @@
 
       <!-- 角色編輯表單 -->
       <div class="character-form">
-        <PersonalInfo />
-        <BasicSettings />
-        <FirstChat />
-        <DetailedSettings ref="detailedSettingsRef" />
-        <Events ref="eventsRef" />
+        <div data-section="personal-info">
+          <PersonalInfo />
+        </div>
+        <div data-section="basic-settings">
+          <BasicSettings />
+        </div>
+        <div data-section="first-chat">
+          <FirstChat />
+        </div>
+        <div data-section="detailed-settings">
+          <DetailedSettings ref="detailedSettingsRef" />
+        </div>
+        <div data-section="events">
+          <Events ref="eventsRef" />
+        </div>
+        <div data-section="secret-stories">
+          <SecretStories ref="secretStoriesRef" />
+        </div>
       </div>
 
       <!-- 載入動畫 -->
@@ -97,6 +107,8 @@ import BasicSettings from '@/components/Character/BasicSettings.vue'
 import FirstChat from '@/components/Character/FirstChat.vue'
 import DetailedSettings from '@/components/Character/DetailedSettings.vue'
 import Events from '@/components/Character/Events.vue'
+import SecretStories from '@/components/Character/SecretStories.vue'
+import NavigationSidebar from '@/components/Common/NavigationSidebar.vue'
 import { useGoogleAuth } from '@/composables/useGoogleAuth'
 import GitHubIcon from '@/components/Common/GitHubIcon.vue'
 import AiChatIcon from '@/components/Common/AiChatIcon.vue'
@@ -113,6 +125,8 @@ export default {
     FirstChat,
     DetailedSettings,
     Events,
+    SecretStories,
+    NavigationSidebar,
     GitHubIcon,
     AiChatIcon,
     Flag,
@@ -150,6 +164,7 @@ export default {
 
     const detailedSettingsRef = ref(null)
     const eventsRef = ref(null)
+    const secretStoriesRef = ref(null)
 
     const scrollToTop = () => {
       window.scrollTo({
@@ -176,15 +191,37 @@ export default {
       }
     }
 
+    const scrollToSecretStories = () => {
+      if (secretStoriesRef.value) {
+        secretStoriesRef.value.$el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+
+    const handleNavigate = (sectionId) => {
+      const element = document.querySelector(`[data-section="${sectionId}"]`)
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+
     return {
       isSignedIn,
       loading,
       testLogin,
       detailedSettingsRef,
       eventsRef,
+      secretStoriesRef,
       scrollToTop,
       scrollToDetailedSettings,
-      scrollToEvents
+      scrollToEvents,
+      scrollToSecretStories,
+      handleNavigate
     }
   }
 }
@@ -198,6 +235,13 @@ export default {
 
 .container {
   @include common-container;
+}
+
+/* 桌面版：為左側導覽欄預留空間 */
+@media (min-width: 769px) {
+  .container {
+    margin-left: 220px; // 200px sidebar + 20px spacing
+  }
 }
 
 h1 {

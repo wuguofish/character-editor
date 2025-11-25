@@ -32,4 +32,71 @@ export const CHARACTER_TEMPLATE = {
   events: [
     { title: "", timeAndPlace: "", content: "" }
   ],
+  secretStories: {
+    acquaintance: [
+      {
+        unlockHint: "",
+        title: "",
+        content: "",
+        options: [
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 }
+        ],
+        requiredAffection: 0
+      }
+    ],
+    friend: [
+      {
+        unlockHint: "",
+        title: "",
+        content: "",
+        options: [
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 }
+        ],
+        requiredAffection: 20
+      }
+    ],
+    crush: [
+      {
+        unlockHint: "",
+        title: "",
+        content: "",
+        options: [
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 }
+        ],
+        requiredAffection: 50
+      }
+    ],
+    lover: [
+      {
+        unlockHint: "",
+        title: "",
+        content: "",
+        options: [
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 }
+        ],
+        requiredAffection: 400
+      }
+    ],
+    married: [
+      {
+        unlockHint: "",
+        title: "",
+        content: "",
+        options: [
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 },
+          { choice: "", outcome: "", affectionChange: 0 }
+        ],
+        requiredAffection: 4000
+      }
+    ]
+  },
 };

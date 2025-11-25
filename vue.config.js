@@ -9,7 +9,10 @@ module.exports = defineConfig({
   devServer: {
     https: true,
     port: 8080,
-    host: 'localhost'
+    host: 'localhost',
+    client: {
+      overlay: false  // 關閉錯誤覆蓋層，避免 ResizeObserver 錯誤干擾
+    }
   },
   css: {
     loaderOptions: {

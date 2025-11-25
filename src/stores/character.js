@@ -15,6 +15,11 @@ export const useCharacterStore = defineStore('character', {
 
   actions: {
     updateCharacter(newData) {
+      // 確保舊檔案相容性：如果沒有 secretStories，則補上預設結構
+      if (!newData.secretStories) {
+        newData.secretStories = { ...CHARACTER_TEMPLATE.secretStories }
+      }
+
       this.character = { ...newData }
       this.isDirty = true
     },
