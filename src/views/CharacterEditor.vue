@@ -7,12 +7,6 @@
       <div class="header">
         <h1><img :src="require('@/../public/logo.svg')" alt="Logo" class="logo" /> 7755遊戲角色檔案編輯器</h1>
         <div class="relate-link-group">
-          <el-button type="text" class="expand-btn donate-btn ani-bounce" @click="openDonatePage" circle>
-            <el-icon class="btn-icon">
-              <span>♡</span>
-            </el-icon>
-            <span class="btn-text">贊助</span>
-          </el-button>
           <el-button type="text" class="expand-btn personal-site-btn" @click="openPersonalSite" circle>
             <el-icon class="btn-icon">
               <AiChatIcon />
@@ -45,7 +39,7 @@
           <p>本工具<b>不涉及任何資料儲存</b>，僅做格式轉換。<br />
             對Google雲端操作功能有疑慮者，請選擇使用本機檔案匯出匯入功能。 <br />
             匯出為Markdown格式的檔案，無法匯回本工具。<br />
-            永久免費，付費也不會解鎖新功能。
+            永久免費。
           </p>
         </div>
         <FileControls />
@@ -134,16 +128,13 @@ export default {
   },
   methods: {
     openPersonalSite() {
-      window.open('https://wuguofish.github.io/lonely-chat-ai/', '_blank')
+      window.open('https://wuguofish.github.io/lonely-chat-ai/7755.html', '_blank')
     },
     openGithub() {
       window.open('https://github.com/wuguofish/character-editor', '_blank')
     },
     openReportPage() {
       window.open('https://forms.gle/8svwv5X4YSUuxDqb7', '_blank')
-    },
-    openDonatePage() {
-      window.open('https://portaly.cc/atone0331/support', '_blank')
     }
   },
   setup() {
@@ -336,14 +327,6 @@ h1 {
 
 
 /* 個別按鈕的背景色 */
-.donate-btn {
-  background: #f34fa1ff;
-  i {
-    font-style: normal;
-    font-weight: 500;
-  }
-}
-
 .github-btn {
   background: rgba(51, 51, 51, 0.9);
 }
